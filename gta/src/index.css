@@ -70,10 +70,11 @@ main {
     @apply md:text-[8rem] text-[5rem] font-round-bold !font-extrabold uppercase md:leading-[7rem] leading-[4.5rem] text-center bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 bg-clip-text text-transparent;
   }
   .hero-section {
-    @apply w-dvw h-dvh relative overflow-hidden;
+    @apply w-screen h-screen relative overflow-hidden;
+    /* @apply w-dvw h-dvh relative overflow-hidden; */
 
     .scale-out {
-      @apply object-cover md:scale-125 h-full;
+      @apply object-cover md:scale-150 h-full;
     }
     .title-logo {
       @apply absolute h-full md:scale-125 top-0 object-cover;
@@ -238,6 +239,8 @@ main {
 
 .mask-wrapper {
   mask-image: url("/images/big-hero-text.svg");
+  /* mask-image: url("/images/diqra.svg"); */
+
   mask-repeat: no-repeat;
 }
 

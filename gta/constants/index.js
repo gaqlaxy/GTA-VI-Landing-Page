@@ -24,7 +24,7 @@ export const useMaskSettings = () => {
 
   return {
     initialMaskPos: "50% 22%",
-    initialMaskSize: "3500% 3500%",
+    initialMaskSize: "3500% 4000%",
     maskPos: "50% 22%",
     maskSize: "20% 20%",
   };
