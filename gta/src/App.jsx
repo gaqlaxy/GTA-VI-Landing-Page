@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <main>
-        <Navbar />
+        {/* <Navbar /> */}
         <HeroSection />
       </main>
     </>
