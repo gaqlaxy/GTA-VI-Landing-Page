@@ -1,0 +1,139 @@
+// Practice V1
+import { useGSAP } from "@gsap/react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+const Practice = () => {
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
+  const section4Ref = useRef(null);
+  const hero1Ref = useRef(null);
+  const hero2Ref = useRef(null);
+  const hero3Ref = useRef(null);
+  const hero4Ref = useRef(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: section1Ref.current,
+      start: "top top",
+      pin: true,
+      pinSpacing: false,
+      markers: true,
+    });
+    ScrollTrigger.create({
+      trigger: section2Ref.current,
+      start: "top top",
+      pin: true,
+      pinSpacing: false,
+      markers: true,
+    });
+    ScrollTrigger.create({
+      trigger: section3Ref.current,
+      start: "top top",
+      pin: true,
+      pinSpacing: false,
+      markers: true,
+    });
+  });
+
+  return (
+    <>
+      <section ref={section1Ref} className=" bg-amber-300 z-1 relative">
+        <h1
+          ref={hero1Ref}
+          className="h-screen flex items-center justify-center text-6xl font-bold tracking-tight"
+        >
+          Section 1 (Pinned and Visible)
+        </h1>
+      </section>
+      <section ref={section2Ref} className="bg-green-300 z-2 relative">
+        <h1
+          ref={hero2Ref}
+          className="h-screen flex items-center justify-center text-6xl font-bold tracking-tight "
+        >
+          Section 2 (Slides in and overlaps section 1)
+        </h1>
+      </section>
+      <section ref={section3Ref} className="bg-red-400 z-3 relative">
+        <h1
+          ref={hero3Ref}
+          className="h-screen flex items-center justify-center text-6xl font-bold tracking-tight "
+        >
+          Section 3 (Slides in and overlaps section 2)
+        </h1>
+      </section>
+      <section ref={section4Ref} className="bg-purple-600 z-4 relative">
+        <h1
+          ref={hero4Ref}
+          className="h-screen flex items-center justify-center text-6xl font-bold tracking-tight "
+        >
+          Section 4 (Slides in and overlaps section 3)
+        </h1>
+      </section>
+    </>
+  );
+};
+
+export default Practice;
+
+// Refactored Version
+// import { useGSAP } from "@gsap/react";
+// import React, { useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// export default function Practice() {
+//   const sectionsRef = useRef([]);
+
+//   useGSAP(() => {
+//     sectionsRef.current.forEach((section, index) => {
+//       // if (index === 0) return; // skip first section (base layer)
+
+//       ScrollTrigger.create({
+//         trigger: section,
+//         start: "top top",
+//         pin: true,
+
+//         pinSpacing: false,
+
+//         // markers: true, // uncomment while debugging
+//       });
+//     });
+
+//     ScrollTrigger.refresh();
+//   });
+
+//   const content = [
+//     "Section 1 (Pinned and Visible)",
+//     "Section 2 (Slides in and overlaps section 1)",
+//     "Section 3 (Slides in and overlaps section 2)",
+//     "Section 4 (Slides in and overlaps section 3)",
+//   ];
+
+//   const colors = ["#FBBF24", "#6EE7B7", "#F87171", "#7C3AED"]; // amber, green, red, purple
+
+//   return (
+//     <>
+//       {content.map((text, i) => (
+//         <section
+//           key={i}
+//           ref={(el) => (sectionsRef.current[i] = el)}
+//           className="h-screen flex justify-center items-center text-6xl font-bold tracking-tight"
+//           style={{
+//             background: colors[i],
+//             position: "relative",
+//             zIndex: i + 1,
+//           }}
+//         >
+//           {text}
+//         </section>
+//       ))}
+//     </>
+//   );
+// }
