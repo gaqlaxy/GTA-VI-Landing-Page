@@ -4,6 +4,7 @@ import HeroSection from "./sections/HeroSection";
 import Navbar from "./sections/Navbar";
 import Practice from "./sections/Practice";
 import FirstVideo from "./sections/FirstVideo";
+import Jason from "./sections/Jason";
 
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Navbar />
         <HeroSection />
         <FirstVideo/>
+        <Jason />
         {/* <Practice /> */}
       </main>
     </>
